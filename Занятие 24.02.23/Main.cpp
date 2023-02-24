@@ -31,10 +31,43 @@ int search_last_index(T arr[], const int length, T value, int begin) {//поэтому 
 		if (arr[i] == value)
 			return i;
 }
+//Функция для символов
+void subword(char word[], const int size, char sym) {
+	int index = search_index(word, size, sym);
+	if (index != -1) {
+		for (int i = index; i < size; i++)
+			std::cout << word[i];
+		std::cout << std::endl;
+	}
+	else
+		std::cout<<"ERROR\n";
+}
 
 int main() {
 	setlocale(LC_ALL, "Russian");
 	int n;
+	//Задача 2. Подслово
+	std::cout << "Задача 2. Слово\n";
+	const int word_size = 8;
+	char sym;
+	char word[word_size]{
+		'f','u','n','c','t','i','o','n'
+	};
+	for (int i = 0; i < word_size; i++)
+		std::cout << word[i];
+	std::cout << "\nВведите символ - >";
+	std::cin >> sym;
+	std::cout << "Подслово:\n";
+	subword(word, word_size, sym);
+	std::cout << std::endl;
+
+
+
+
+
+
+
+
 	//Линейный поиск элементов в массиве
 	/*const int size = 10;
 	int arr[size]{ 10, 17, 8,-1, 9, 17,11,10,0,50 };
